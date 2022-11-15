@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 
+@keyframes show-opacity {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-image: url("imgs/madera.png");
   display: flex;
   font-family: "Patrick Hand", cursive;
+  color: #00355b;
+  overflow: hidden;
 }
 
 .contenedor-libro-cerrado {
@@ -94,34 +105,319 @@ body {
 }
 
 .contenedor-libro-abierto {
-    background-image: url("imgs/LibroAbierto.png");
-    background-size:cover;
-    background-repeat: no-repeat;
+  background-image: url("imgs/LibroAbierto.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: flex-end;
   width: 85%;
 }
 
-.contenedor-libro-abierto > img {
+.contenedor-post-it {
+  background-image: url("imgs/PostIt.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 300px;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8%;
+  left: 23%;
+}
+
+.contenedor-post-it p {
+  transform: rotate(-9deg);
+  width: 50%;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .contenedor-tags {
   display: flex;
+  position: absolute;
   flex-direction: column;
   width: 13%;
   margin-top: 10%;
 }
 
 .contenedor-tags img {
-    cursor: pointer;
+  cursor: pointer;
+  margin-bottom: 8%;
+  transition: 0.3s;
 }
 
 .contenedor-tags img:hover {
-   background-color: rgba(0, 0, 0, 0.109);
+  transform: rotate(3deg);
+}
+
+.hoja {
+  width: 70%;
+}
+
+.hoja > div > h1 {
+  font-size: 6em;
+  transform: rotate(-8deg);
+  margin-left: 20%;
+  margin-top: 20%;
+}
+
+.nueva-receta {
+  position: relative;
+  margin-left: 20%;
+  margin-top: 5%;
+  width: 80%;
+  cursor: pointer;
+}
+
+.contenedor-lineas {
+  width: 80%;
+}
+
+.contenedor-lineas hr {
+  margin-bottom: 40px;
+  border-color: #00355b;
+}
+
+.nueva-receta p {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.nueva-receta img {
+  position: absolute;
+  right: 10%;
+}
+
+.izq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-titulo {
+  width: 100%;
+}
+
+.contenedor-imgs-recetas {
+  width: 60%;
+}
+
+.contenedor-imgs-recetas img {
+  width: 100%;
+}
+
+.der {
+  margin-top: 10%;
+  padding-bottom: 10%;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.der::-webkit-scrollbar {
+  display: none;
+}
+
+.receta {
+  width: 65%;
+  border-radius: 10px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  height: 40%;
+  transition: 0.3s;
+}
+
+.receta:hover {
+  background-color: #00000010;
+}
+
+.contenedor-imagen-receta {
+  width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left: 2%;
+}
+
+.marco {
+  position: relative;
+  z-index: 2;
+}
+
+.marco img {
+  width: 100%;
+}
+
+.imagen-receta {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 90%;
+  height: 80%;
+  background-image: url("./imgs/recetaDummy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 7%;
+}
+
+.porciones {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.receta h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.tipo-receta-tag {
+  font-size: 1.7em;
+  display: flex;
+  justify-content: center;
+  padding: 0 6px;
+  width: 20%;
+  position: relative;
+}
+
+.tipo-receta-tag > div {
+  background-color: #e076c25f;
+  width: 100%;
+  height: 14px;
+  position: absolute;
+  bottom: 0;
+}
+
+h6 {
+  margin: 0;
+}
+
+.contenido-receta {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lapiz {
+  transition: 0.3s;
+}
+
+.nueva-receta:hover > .lapiz {
+  transform: rotate(10deg);
+}
+
+.cerrar-sesion-boton {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  background-color: #0e0e0e7e;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cerrar-sesion-boton img {
+  width: 60%;
+  transition: 0.3s;
+}
+
+.cerrar-sesion-boton:hover > img {
+  width: 63%;
+}
+
+.popUp {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.popUp-container {
+  z-index: 10;
+  background-image: url("./imgs/libreta.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  height: 80%;
+  width: 30%;
+  position: absolute;
+  flex-direction: column;
+}
+
+.contenido-pop-up > .input {
+  color: #00355b;
+  border-color: #00355b;
+}
+
+.contenido-pop-up input {
+  color: #00355b;
+}
+
+.contenido-pop-up {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 15%;
+  height: 60%;
+}
+
+.contenido-pop-up h3 {
+  font-size: 1.7em;
+}
+
+label {
+  white-space: nowrap;
+}
+
+.contenedor-botones-pop-up {
+  margin-top: auto;
+  margin-bottom: 8%;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+select {
+  font-family: "Patrick Hand", cursive;
+  color: #00355b;
+  font-size: 1em;
+  border: none;
+  background-color: transparent;
+}
+
+input[type="number"] {
+  appearance: none;
+  color: #00355b;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.black-background {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  animation: show-opacity 0.3s ease-in-out;
+  cursor: pointer;
 }

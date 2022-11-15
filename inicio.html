@@ -8,16 +8,182 @@
     <title>Recetario</title>
   </head>
   <body>
-    <div class="contenedor-libro-abierto">
-            <div class="contenedor-tags">
-                <img id="tagPlatoPrincipal" src="./imgs/tags/tagVerde.png" alt="Etiqueta de filtro">
-                <img id="tagPostres" src="./imgs/tags/tagRosada.png" alt="Etiqueta de filtro">
-                <img id="tagGustitos" src="./imgs/tags/tagAmarilla.png" alt="Etiqueta de filtro">
-                <img id="tagSnacks" src="./imgs/tags/tagNaranja.png" alt="Etiqueta de filtro">
-                <img id="tagFavs" src="./imgs/tags/tagAzul.png" alt="Etiqueta de filtro">
-                <img id="tagTodos" src="./imgs/tags/tagGris.png" alt="Etiqueta de filtro">
-            </div>
-            <!-- <img src="imgs/LibroAbierto.png" alt="Libro recetario cerrado" /> -->
+    <section class="popUp hidden">
+      <div class="popUp-container">
+        <div class="contenido-pop-up">
+          <h3>Nueva Receta</h3>
+          <div class="input">
+            <label for="nombre-receta">Nombre:</label>
+            <input id="nombre-receta" type="text" name="nombre-receta" />
+          </div>
+          <div class="input">
+            <label for="foto-url">Foto URL:</label>
+            <input id="foto-url" type="text" name="foto-url" />
+          </div>
+          <div class="input">
+            <label for="categoria">Categoría:</label>
+            <select name="categoria" id="categoria">
+              <option value="plato-principal-op">Plato Principal</option>
+              <option value="postre-op">Postre</option>
+              <option value="gustito-op">Gustito Culposo</option>
+              <option value="snack-op">Snack</option>
+            </select>
+          </div>
+          <div class="input">
+            <label for="porciones">Porciones:</label>
+            <input
+              type="number"
+              id="porciones"
+              name="porciones"
+              min="1"
+              max="8"
+            />
+          </div>
+        </div>
+        <div class="contenedor-botones-pop-up">
+          <div class="boton-secundario cancelar-nueva">Cancelar</div>
+          <div class="boton-primario">Guardar</div>
+        </div>
+      </div>
+      <div class="black-background"></div>
+    </section>
+    <div class="cerrar-sesion-boton">
+      <img src="./imgs/cerrarSesion.svg" alt="Ícono Cerrar sesión" />
     </div>
+    <div class="contenedor-libro-abierto">
+      <div class="hoja izq">
+        <div class="contenedor-titulo">
+          <h1>Recetario</h1>
+          <div class="contenedor-post-it">
+            <p>Colección de recetas de cocina de <span>Sofía</span></p>
+          </div>
+        </div>
+        <div class="nueva-receta">
+          <img class="lapiz" src="./imgs/lapiz.png" alt="Lápiz" />
+          <p>Nueva receta...</p>
+          <div class="contenedor-lineas">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+          </div>
+        </div>
+        <div class="contenedor-imgs-recetas">
+          <img src="./imgs/recetasFotos.png" alt="Fotos de recetas" />
+        </div>
+      </div>
+      <div class="hoja der">
+        <article class="receta">
+          <div class="contenedor-imagen-receta">
+            <div class="marco">
+              <img src="./imgs/marcoImagenes.png" alt="Marco Foto Receta" />
+            </div>
+            <div class="imagen-receta"></div>
+          </div>
+          <div class="contenido-receta">
+            <h2>Tartaleta de frutas</h2>
+            <div class="tipo-receta-tag">
+              <h6>Postre</h6>
+              <div></div>
+            </div>
+            <div class="porciones">
+              <img src="./imgs/carita.svg" alt="Carita feliz" />
+              <p>6 porciones</p>
+            </div>
+          </div>
+        </article>
+        <article class="receta">
+          <div class="contenedor-imagen-receta">
+            <div class="marco">
+              <img src="./imgs/marcoImagenes.png" alt="Marco Foto Receta" />
+            </div>
+            <div class="imagen-receta"></div>
+          </div>
+          <div class="contenido-receta">
+            <h2>Tartaleta de frutas</h2>
+            <div class="tipo-receta-tag">
+              <h6>Postre</h6>
+              <div></div>
+            </div>
+            <div class="porciones">
+              <img src="./imgs/carita.svg" alt="Carita feliz" />
+              <p>6 porciones</p>
+            </div>
+          </div>
+        </article>
+        <article class="receta">
+          <div class="contenedor-imagen-receta">
+            <div class="marco">
+              <img src="./imgs/marcoImagenes.png" alt="Marco Foto Receta" />
+            </div>
+            <div class="imagen-receta"></div>
+          </div>
+          <div class="contenido-receta">
+            <h2>Tartaleta de frutas</h2>
+            <div class="tipo-receta-tag">
+              <h6>Postre</h6>
+              <div></div>
+            </div>
+            <div class="porciones">
+              <img src="./imgs/carita.svg" alt="Carita feliz" />
+              <p>6 porciones</p>
+            </div>
+          </div>
+        </article>
+        <article class="receta">
+          <div class="contenedor-imagen-receta">
+            <div class="marco">
+              <img src="./imgs/marcoImagenes.png" alt="Marco Foto Receta" />
+            </div>
+            <div class="imagen-receta"></div>
+          </div>
+          <div class="contenido-receta">
+            <h2>Tartaleta de frutas</h2>
+            <div class="tipo-receta-tag">
+              <h6>Postre</h6>
+              <div></div>
+            </div>
+            <div class="porciones">
+              <img src="./imgs/carita.svg" alt="Carita feliz" />
+              <p>6 porciones</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="contenedor-tags">
+        <img
+          id="tagPlatoPrincipal"
+          src="./imgs/tags/tagVerde.png"
+          alt="Etiqueta de filtro"
+        />
+        <img
+          id="tagPostres"
+          src="./imgs/tags/tagRosada.png"
+          alt="Etiqueta de filtro"
+        />
+        <img
+          id="tagGustitos"
+          src="./imgs/tags/tagAmarilla.png"
+          alt="Etiqueta de filtro"
+        />
+        <img
+          id="tagSnacks"
+          src="./imgs/tags/tagNaranja.png"
+          alt="Etiqueta de filtro"
+        />
+        <img
+          id="tagFavs"
+          src="./imgs/tags/tagAzul.png"
+          alt="Etiqueta de filtro"
+        />
+        <img
+          id="tagTodos"
+          src="./imgs/tags/tagGris.png"
+          alt="Etiqueta de filtro"
+        />
+      </div>
+    </div>
+    <script type="module" src="codigo.js"></script>
   </body>
 </html>
